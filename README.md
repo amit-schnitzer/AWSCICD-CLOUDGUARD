@@ -32,7 +32,7 @@ Please note that I will be using MacOS in this tutorial and feel free to use any
 The AWS CodePipeline create a CICD pipeline to build and deploy a Lambda function as described in the picture above. We will using the SAM cli  to generate the source code for the Lambda and needed templates that are needed in the build and deploy phases. 
 
 ## This tutorial will teach you step by step how to create a AWS Codepipeline with CloudGuard Workload Serverless security:
-It is important to plan the creation of the ressources needed in the CICD pipeline:
+It is important to plan the creation of the resources needed in the CICD pipeline:
 * Create a Repository on your laptop using Git and on AWS using AWS CodeCommit or GitHub. When a change or a commit is made it will be passed to an S3 bucket and then to Code Build
 * A Build Project in AWS CodeBuild to checkout the code from AWS CodeCommit and package it. This includes the source code in a handler.js file, the SAM template yaml file and the Build specification yaml file or Buildspec.yaml. The Buildspec file defines flow of the various commands needed in each CICD stage in order to package and deploy the application using the SAM template. The CloudGuard serverless security will be integrated in CodeBuild with the Buildspec file using the CLI plugin.
 * A CloudFormation Stack and Changeset to deploy the Lambda function in the Deploy phase. A cloudFormation stack will be needed to create a changeset and if you are not able to write a stack template, we will use the SAM deploy code to create one.
