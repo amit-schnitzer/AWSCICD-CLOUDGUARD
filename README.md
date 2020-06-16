@@ -65,7 +65,7 @@ The SAM template or **template.yml** defines the serverless application:
 
 The build specification file or **Buildspec.yml** defines the required packages and uploads the deployment package to a Amazon S3 bucket.
 You will have to create a AWS S3 bucket and add its name to the file and add the CloudGuard Workload CLI plugin to define Proact or the governance and static code scanning as well as the runtime application security testing with the Fuction Self Protection or FSP.
-Lets first create the S3 bucket and do not forget to ADD to add IAM permission to CodeBuild role to access the S3 bucket or the build phases will fail with an error. You can use the aws command below:
+Lets first create the S3 bucket and do not forget to add IAM permission to CodeBuild role to access the S3 bucket or the build phases will fail with an error. You can use the aws command below:
 
 > aws s3 mb s3://cloudguard-bucket
 
